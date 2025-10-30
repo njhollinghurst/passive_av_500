@@ -47,20 +47,20 @@ Although intended for use with a TV or amplifier, the circuit can (quietly) driv
 
 ### Passive components
 
-| Designator | Value |Footprint |JLCPCB part #|
-|------------|-------|----------|----------|
-| R1-R3 | 470 | 0805 |C17710|
-| R4    | 1K  | 0805 |C17513|
-| R5    | 2K  | 0805 |C17604|
-| R6    | 3.9K  | 0805 |C17614|
-| R7    | 8.2K  | 0805 |C17828|
-| R8    | 15K  | 0805 |C17475|
-| R9    | 22K  | 0805 |C17560|
-| R10, R12 | 220  | 0805 |C17557|
-| R11, R13 | 100  | 0805 |C17408|
-| C1, C3 | 22uF | 1206 |C12891|
-| C2, C4 | 100nF | 0805 |C49678|
-| C5 | 100pF | 0805 |C1790|
+| Designator | Value |Footprint |
+|------------|-------|----------|
+| R1-R3 | 470 | 0805 |
+| R4    | 1K  | 0805 |
+| R5    | 2K  | 0805 |
+| R6    | 3.9K  | 0805 |
+| R7    | 8.2K  | 0805 |
+| R8    | 15K  | 0805 |
+| R9    | 22K  | 0805 |
+| R10, R12 | 220  | 0805 |
+| R11, R13 | 100  | 0805 |
+| C1, C3 | 22uF | 1206 |
+| C2, C4 | 100nF | 0805 |
+| C5 | 100pF | 0805 |
 
 Resistors should be 1% (especially R1-R4). C1, C3 are unpolarized; 10% tolerance and 10V rating are fine. A higher rating or larger package might improve quality.
 
@@ -72,8 +72,15 @@ J4 is Tensility 54-00174. There are other similar-shaped TRRS sockets (some bend
 
 The unusual choice of a right-angle socket for J1 was made with Raspberry Pi 500 in mind. Do not fit a socket on the underside! You would have to change the layout to adapt the board to HAT form factor.
 
+### Production files
 
-### A note on missing files
+These were generated using the KiCad JLCPCB plugin, but are provided with no warranty of correctness or suitability.
+
+Only SMT passive components feature in the BOM. I've used "Hand-Solder" footprints (with longer pads) but they should work with automated assembly. For large scale assembly, consider reverting to normal footprints.
+
+J1 overhangs the board edge, which might complicate automated assembly, should it be attempted.
+
+### A note on missing footprints
 
 The repository does not include any footprint or symbol libraries. Footprints for J2 and J4 are available from SnapMagic Search, Inc.
 
