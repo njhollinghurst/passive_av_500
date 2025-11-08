@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Passive A/V out example circuit for Raspberry Pi 5 series")
-		(date "2025-10-25")
-		(rev "2")
+		(date "2025-11-08")
+		(rev "2.1")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_Coaxial"
@@ -4330,7 +4330,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220R"
+		(property "Value" "300R"
 			(at 128.27 104.14 90)
 			(effects
 				(font
@@ -4366,7 +4366,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17557"
+		(property "LCSC" "C17617"
 			(at 124.46 106.68 90)
 			(effects
 				(font
@@ -4408,7 +4408,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100R"
+		(property "Value" "120R"
 			(at 156.21 114.3 0)
 			(effects
 				(font
@@ -4444,7 +4444,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17408"
+		(property "LCSC" "C17437"
 			(at 153.67 111.76 0)
 			(effects
 				(font
@@ -4627,7 +4627,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100R"
+		(property "Value" "120R"
 			(at 156.21 139.7 0)
 			(effects
 				(font
@@ -4663,7 +4663,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17408"
+		(property "LCSC" "C17437"
 			(at 153.67 137.16 0)
 			(effects
 				(font
@@ -4705,7 +4705,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220R"
+		(property "Value" "300R"
 			(at 128.27 129.54 90)
 			(effects
 				(font
@@ -4741,7 +4741,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17557"
+		(property "LCSC" "C17617"
 			(at 124.46 132.08 90)
 			(effects
 				(font

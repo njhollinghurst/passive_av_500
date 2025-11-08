@@ -46,17 +46,19 @@ The output is DC-coupled with an impedance of about 125 &Omega;. Peak output is 
 
 This is a variant of the PWM filter used in some Raspberry Pi models, omitting the regulator and buffer for simplicity. Although intended for use with a TV or amplifier, it can (quietly) drive headphones with impedance &ge; 32 &Omega;.
 
-C1, C3 are unpolarized; 10% tolerance and 10V rating are fine. A higher rating or larger package might improve quality.
+C1, C3 are unpolarized; 10% tolerance and 10V rating are fine.
 
 ### Passive components and assembly
 
 Only SMD passive components are listed in the [BOM](production/bom.csv) file.
 
+If using JLCPCB assembly, select "user specified tooling holes" (or they might drill extra ones). There will be a warning that J1-J4 are missing from the BOM &mdash; this is expected.
+
 I've used "Hand Solder" footprints (with longer pads) but they should work with automated assembly too. Consider reverting to normal footprints. Conversely, for easier hand soldering, the layout is spacious enough to accommodate 1206 footprints without major changes.
 
 ### Connectors
 
-J2 is Same Sky RCJ-014. Other sockets exist with similar footprints.
+J2 is Same Sky RCJ-014, available from DigiKey. Other sockets exist with similar footprints.
 
 J4 is Tensility 54-00174. There are other similar-shaped TRRS sockets (some bending of pins may be required).
 
@@ -69,3 +71,9 @@ The unusual choice of a right-angle socket for J1 was made with Raspberry Pi 500
 The repository does not include any footprint or symbol libraries. Footprints for J2 and J4 are available from SnapMagic Search, Inc.
 
 Note that I **changed their pin numbers** to match KiCad's symbols, trimmed silkscreen at board edges, and modified KiCad's `Raspberry_Pi_2_3` symbol to separate the GND pins.
+
+## Version history
+
+**2.0** First published version. Added tooling holes. Tested, works well.
+
+**2.1** Add ground plane vias. Increase audio resistors, to reduce GPIO peak current (slightly reducing audio level). Move J2 slightly.
