@@ -1,6 +1,6 @@
 # Passive A/V example circuit for Raspberry Pi 500
 
-This simple circuit demonstrates composite video and audio out from Raspberry Pi 5 series computers, using only passive components (it cannot produce composite video from Raspberry Pi 400 or earlier models).  Video and audio quality are limited. There may be crosstalk between them, and power supply noise. The circuit is nevertheless useful for less-demanding applications.
+This simple circuit demonstrates composite video and audio out from Raspberry Pi 5 series computers, using only passive components (it cannot produce composite video from Raspberry Pi 400 or earlier models).  Audio quality is limited: some power supply noise may be audible. The circuit is nevertheless useful for less-demanding applications.
 
 This is not an official product. It has not undergone regulatory testing. But you can make and adapt it.
 
@@ -52,9 +52,9 @@ C1, C3 are unpolarized; 10% tolerance and 10V rating are fine.
 
 Only SMD passive components are listed in the [BOM](production/bom.csv) file.
 
-If using JLCPCB assembly, select "user specified tooling holes" (or they might drill extra ones). There will be a warning that J1-J4 are missing from the BOM &mdash; this is expected.
+If using JLCPCB assembly, select **"Tooling holes placed by user"** (or they might drill extra ones). There will be a warning that J1-J4 are missing from the BOM &mdash; this is expected.
 
-I've used "Hand Solder" footprints (with longer pads) but they should work with automated assembly too. Consider reverting to normal footprints. Conversely, for easier hand soldering, the layout is spacious enough to accommodate 1206 footprints without major changes.
+I've used "Hand Solder" footprints (with slightly longer pads) but they should work with automated assembly too.
 
 ### Connectors
 
@@ -64,7 +64,7 @@ J4 is Tensility 54-00174. There are other similar-shaped TRRS sockets (some bend
 
 J3 is a 5-pin header, for testing and to make the video->J4 connection optional (otherwise, headphones could short the video signal). You could hard-wire a link here to omit J2, J3 and use only J4.
 
-The unusual choice of a right-angle socket for J1 was made with Raspberry Pi 500 in mind. Do not fit a socket on the underside! You would have to change the layout to adapt the board to HAT form factor.
+J1 is a 2.54mm 2x20 right-angle (horizontal) socket (female). This unusual choice was made with Raspberry Pi 500 in mind. Do *not* fit a socket on the underside! You would have to change the layout to adapt the board to HAT form factor.
 
 ### A note on missing footprints
 
