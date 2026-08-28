@@ -12,7 +12,7 @@ The board was designed using KiCad 9.0. Production files were generated using th
 
  * Ensure you can log in remotely, in case you end up with no display.
  * `dtoverlay=vc4-drm-kms-v3d,composite` (or use `raspi-config` to enable composite).
- * `dtoverlay=vec-gpio-pi5,gpio27` (this is a new overlay, not yet released).
+ * `dtoverlay=vec-gpio-pi5,gpio27`
  * `dtoverlay=audremap,pins_12_13`
  * `power_force_3v3_pwm=1`
  * Optionally, set a video mode in `cmdline.txt` (the default will be 704x432i NTSC).
