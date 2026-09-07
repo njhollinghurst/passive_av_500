@@ -11,10 +11,11 @@ The board was designed using KiCad 9.0. Production files were generated using th
 ## Quick instructions
 
  * Ensure you can log in remotely, in case you end up with no display.
- * `dtoverlay=vc4-drm-kms-v3d,composite` (or use `raspi-config` to enable composite).
- * `dtoverlay=vec-gpio-pi5,gpio27`
- * `dtoverlay=audremap,pins_12_13`
- * `power_force_3v3_pwm=1`
+ * Edit `config.txt` to add:
+   * `dtoverlay=vc4-kms-v3d,composite` (append `,composite` to the existing `vc4-kms-v3d` line, if present).
+   * `dtoverlay=vec-gpio-pi5,gpio27`
+   * `dtoverlay=audremap,pins_12_13`
+   * `power_force_3v3_pwm=1`
  * Optionally, set a video mode in `cmdline.txt` (the default will be 704x432i NTSC).
  * Power off before connecting anything.
  * Connect to Raspberry Pi 500 or 500+, ensuring connector is centrally aligned and covers all header pins! Component side up.
@@ -46,7 +47,7 @@ The output is DC-coupled with an impedance of about 125 &Omega;. Peak output is 
 
 This is a variant of the PWM filter used in some Raspberry Pi models, omitting the regulator and buffer for simplicity. Although intended for use with a TV or amplifier, it can (quietly) drive headphones with impedance &ge; 32 &Omega;.
 
-C1, C3 are unpolarized; 10% tolerance and 10V rating are fine.
+C1, C3 are unpolarized; 20% tolerance and 10V rating are fine.
 
 ### Passive components and assembly
 
@@ -64,7 +65,7 @@ J4 is Tensility 54-00174. There are other similar-shaped TRRS sockets (some bend
 
 J3 is a 5-pin header, for testing and to make the video->J4 connection optional (otherwise, headphones could short the video signal). You could hard-wire a link here to omit J2, J3 and use only J4.
 
-J1 is a 2.54mm 2x20 right-angle (horizontal) socket (female). This unusual choice was made with Raspberry Pi 500 in mind. Do *not* fit a socket on the underside! You would have to change the layout to adapt the board to HAT form factor.
+J1 is a 2.54mm 2x20 right-angle (horizontal) socket (female). This unusual choice was made with Raspberry Pi 500 in mind. Do **not** fit a socket on the underside! You would have to change the layout to adapt the board to HAT form factor.
 
 ### A note on missing footprints
 
