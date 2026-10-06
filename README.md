@@ -1,5 +1,7 @@
 # Passive A/V example circuit for Raspberry Pi 500
 
+**This is the through-hole version, for easy hand assembly.** See the main branch for the original SMD version.
+
 This simple circuit demonstrates composite video and audio out from Raspberry Pi 5 series computers, using only passive components (it cannot produce composite video from Raspberry Pi 400 or earlier models).  Audio quality is limited: some power supply noise may be audible. The circuit is nevertheless useful for less-demanding applications.
 
 This is not an official product. It has not undergone regulatory testing. But you can make and adapt it.
@@ -31,7 +33,7 @@ No picture? You might not have the new overlay. Type this (after Ctrl-Alt-T if u
 
 ## Circuit notes
 
-Here is the [schematic](images/schematic.pdf).
+Here are the [schematic](images/schematic.pdf) and [list of components](production/bom.csv).
 
 ### Video
 
@@ -39,7 +41,7 @@ On the RP1 chip, three copies of an 8-bit signal from the VEC (video encoder) ca
 
 Here we use a simple 7-bit resistor DAC. To improve linearity, the MSB is driven by two separate GPIOs (11 and 27).
 
-Resistor values were chosen from JLCPCB's "Basic" range (mostly E12) to approximate the sequence (490 x 2<sup><i>n</i></sup>) - 20 &Omega;. More precise values for R5 and R7 might be 1.96 k&Omega;, 7.87 k&Omega;. All resistors should be 1%.
+Resistor values were chosen to approximate the sequence (490 x 2<sup><i>n</i></sup>) - 20 &Omega;. At least R1-R3, and preferably all resistors, should have 1% tolerance. More precise values for R5 and R7 might be 1.96 k&Omega;, 7.87 k&Omega;.
 
 The output is DC-coupled with an impedance of about 125 &Omega;. Peak output is about 1.2 V into a 75 &Omega; load.
 
@@ -47,15 +49,7 @@ The output is DC-coupled with an impedance of about 125 &Omega;. Peak output is 
 
 This is a variant of the PWM filter used in some Raspberry Pi models, omitting the regulator and buffer for simplicity. Although intended for use with a TV or amplifier, it can (quietly) drive headphones with impedance &ge; 32 &Omega;.
 
-C1, C3 are unpolarized; 20% tolerance and 10V rating are fine.
-
-### Passive components and assembly
-
-Only SMD passive components are listed in the [BOM](production/bom.csv) file.
-
-If using JLCPCB assembly, select **"Tooling holes placed by user"** (or they might drill extra ones). There will be a warning that J1-J4 are missing from the BOM &mdash; this is expected.
-
-I've used "Hand Solder" footprints (with slightly longer pads) but they should work with automated assembly too.
+C1, C3 footprints suit radial electrolytic capacitors with 2.5mm lead spacing. 20% tolerance and 10 V rating are fine.
 
 ### Connectors
 
@@ -75,6 +69,8 @@ Note that I **changed their pin numbers** to match KiCad's symbols, trimmed silk
 
 ## Version history
 
-**2.0** First published version. Added tooling holes. Tested, works well.
+**2.0** First published SMD version. Added tooling holes. Tested, works well.
 
 **2.1** Add ground plane vias. Increase audio resistors, to reduce GPIO peak current (slightly reducing audio level). Move J2 slightly.
+
+**thru-hole/th-1.0** (untested). Through-hole version with different footprints and some component tweaks. C1, C3 replaced by electrolytic capacitors. R10, R12 changed to 270 &Omega; for availability.
