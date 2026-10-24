@@ -1,5 +1,5 @@
 ﻿Designator,Footprint,Quantity,Value
-"C1, C3",CP_Radial_D6.3mm_P2.50mm,2,22uF
+"C1, C3",CP_Radial_D5.0mm_P2.00mm,2,22uF
 "C2, C4",C_Rect_L7.0mm_W2.5mm_P5.00mm,2,100nF
 C5,C_Disc_D5.0mm_W2.5mm_P5.00mm,1,100pF
 J1,PinSocket_2x20_P2.54mm_Horizontal_trimsilk,1,Raspberry_Pi_5

@@ -8,7 +8,7 @@ This is not an official product. It has not undergone regulatory testing. But yo
 
 ![Rendered image of PCB](images/populated.jpg)
 
-The board was designed using KiCad 9.0. Production files were generated using the JLCPCB plugin. They are provided without any warranty of correctness or manufacturability.
+The [board](kicad) was designed using KiCad 9.0. [Production files](production) were generated using the JLCPCB plugin. They are provided without any warranty of correctness or manufacturability.
 
 ## Quick instructions
 
@@ -31,6 +31,14 @@ No picture? You might not have the new overlay. Type this (after Ctrl-Alt-T if u
    pinctrl 4-11,27 a1
 ```
 
+## Getting the PCB made
+
+To make a bare PCB, the [zipfile](production/passive_av_500_th-1.1.zip) is all you need. Some fabricators might also accept (and prefer) the KiCad PCB file.
+
+I've had versions of this board made successfully by JLCPCB (China) and OSH Park (US).
+
+Ignore any warning about a missing bottom silkscreen (there is none).
+
 ## Circuit notes
 
 Here are the [schematic](images/schematic.pdf) and [list of components](production/bom.csv).
@@ -49,7 +57,7 @@ The output is DC-coupled with an impedance of about 125 &Omega;. Peak output is 
 
 This is a variant of the PWM filter used in some Raspberry Pi models, omitting the regulator and buffer for simplicity. Although intended for use with a TV or amplifier, it can (quietly) drive headphones with impedance &ge; 32 &Omega;.
 
-C1, C3 footprints suit radial electrolytic capacitors with 2.5mm lead spacing. 20% tolerance and 10 V rating are fine.
+C1, C3 footprints suit radial electrolytic capacitors with 2mm lead spacing. 20% tolerance and 10 V rating are fine. (If you have capacitors with different lead spacing, don't try to push them all the way in! Leave room to bend the leads.)
 
 ### Connectors
 
@@ -73,4 +81,6 @@ Note that I **changed their pin numbers** to match KiCad's symbols, trimmed silk
 
 **2.1** Add ground plane vias. Increase audio resistors, to reduce GPIO peak current (slightly reducing audio level). Move J2 slightly.
 
-**thru-hole/th-1.0** (untested). Through-hole version with different footprints and some component tweaks. C1, C3 replaced by electrolytic capacitors. R10, R12 changed to 270 &Omega; for availability.
+**thru-hole/th-1.0** Through-hole version with different footprints and some component tweaks. C1, C3 replaced by electrolytic capacitors. R10, R12 changed to 270 &Omega; for availability.
+
+**thru-hole/th-1.1** Through-hole version. Remove unused layers (solder paste, adhesive). Change C1, C3 footprints to 2.0mm pin spacing. Tested.
