@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Passive A/V out example circuit for Raspberry Pi 5 series")
-		(date "2026-10-09")
-		(rev "th-1.0")
+		(date "2026-10-24")
+		(rev "th-1.1")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_Coaxial"
