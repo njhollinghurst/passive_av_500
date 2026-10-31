@@ -8,7 +8,7 @@ This is not an official product. It has not undergone regulatory testing. But yo
 
 ![Rendered image of PCB](images/populated.jpg)
 
-The board was designed using KiCad 9.0. Production files were generated using the JLCPCB plugin. They are provided without any warranty of correctness or manufacturability.
+The [board](kicad) was designed using KiCad 9.0. [Production files](production) were generated using the JLCPCB plugin. They are provided without any warranty of correctness or manufacturability.
 
 ## Quick instructions
 
@@ -49,7 +49,7 @@ The output is DC-coupled with an impedance of about 125 &Omega;. Peak output is 
 
 This is a variant of the PWM filter used in some Raspberry Pi models, omitting the regulator and buffer for simplicity. Although intended for use with a TV or amplifier, it can (quietly) drive headphones with impedance &ge; 32 &Omega;.
 
-C1, C3 footprints suit radial electrolytic capacitors with 2.5mm lead spacing. 20% tolerance and 10 V rating are fine.
+C1, C3 footprints suit radial electrolytic capacitors with 2mm lead spacing. 20% tolerance and 10 V rating are fine.
 
 ### Connectors
 
@@ -74,3 +74,5 @@ Note that I **changed their pin numbers** to match KiCad's symbols, trimmed silk
 **2.1** Add ground plane vias. Increase audio resistors, to reduce GPIO peak current (slightly reducing audio level). Move J2 slightly.
 
 **thru-hole/th-1.0** (untested). Through-hole version with different footprints and some component tweaks. C1, C3 replaced by electrolytic capacitors. R10, R12 changed to 270 &Omega; for availability.
+
+**thru-hole/th-1.1** (untested). Through-hole version. Remove unused layers (solder paste, adhesive). Change C1, C3 footprints to 2.0mm pin spacing.
