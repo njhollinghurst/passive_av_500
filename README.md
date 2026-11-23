@@ -29,6 +29,14 @@ No picture? You might not have the new overlay. Type this (after Ctrl-Alt-T if u
    pinctrl 4-11,27 a1
 ```
 
+## Getting the PCB made
+
+To make a bare PCB, the [zipfile](production/passive_av_500.zip) should be all you need. I've had versions of this board made successfully by JLCPCB (China) and OSH Park (US).
+
+Most components are 0805, which is not too hard to solder. I've used "Hand Solder" footprints (with slightly longer pads) but they should work with automated assembly too. (For easier hand assembly, there's also a [through-hole version](https://github.com/njhollinghurst/passive_av_500/tree/thru-hole) of this board.)
+
+If you use JLCPCB's assembly service, be sure to select **"Tooling holes placed by customer"** (or they might drill extra ones). Only SMD passive components are listed in the [BOM](production/bom.csv) file. You will see a warning that J1-J4 are missing from the BOM &mdash; this is expected. You'll need to buy and fit the [connectors](README.md#connectors) yourself.
+
 ## Circuit notes
 
 Here is the [schematic](images/schematic.pdf).
@@ -48,14 +56,6 @@ The output is DC-coupled with an impedance of about 125 &Omega;. Peak output is 
 This is a variant of the PWM filter used in some Raspberry Pi models, omitting the regulator and buffer for simplicity. Although intended for use with a TV or amplifier, it can (quietly) drive headphones with impedance &ge; 32 &Omega;.
 
 C1, C3 are unpolarized; 20% tolerance and 10V rating are fine.
-
-### Passive components and assembly
-
-Only SMD passive components are listed in the [BOM](production/bom.csv) file.
-
-If using JLCPCB assembly, select **"Tooling holes placed by user"** (or they might drill extra ones). There will be a warning that J1-J4 are missing from the BOM &mdash; this is expected.
-
-I've used "Hand Solder" footprints (with slightly longer pads) but they should work with automated assembly too.
 
 ### Connectors
 
